@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 
-import User from './User';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 // Toda vez que o model for salvo sera armazenado na tabela appointments
 // A classe é um parametro passado para entidade

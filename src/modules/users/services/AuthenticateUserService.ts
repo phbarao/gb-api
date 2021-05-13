@@ -2,9 +2,9 @@ import { compare } from 'bcryptjs';
 import { getRepository } from 'typeorm';
 import { sign, verify } from 'jsonwebtoken';
 
-import authConfig from '../config/auth';
-import AppError from '../errors/AppError';
-import User from '../models/User';
+import authConfig from '@config/auth';
+import AppError from '@shared/errors/AppError';
+import User from '../infra/typeorm/entities/User';
 
 // Interface para definir os tipos das variaveis
 interface Request {
