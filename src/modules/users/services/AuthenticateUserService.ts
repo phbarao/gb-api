@@ -4,7 +4,7 @@ import { sign, verify } from 'jsonwebtoken';
 
 import authConfig from '@config/auth';
 import AppError from '@shared/errors/AppError';
-import User from '../infra/typeorm/entities/User';
+import User from '../infra/typeorm/User';
 
 // Interface para definir os tipos das variaveis
 interface Request {
