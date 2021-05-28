@@ -10,7 +10,6 @@ let fakeMailProvider: FakeMailProvider;
 let sendForgotPasswordEmail: SendForgotPasswordEmailService;
 
 describe('SendForgotPasswordEmail', () => {
-  // Antes de cada teste
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
     fakeMailProvider = new FakeMailProvider();
