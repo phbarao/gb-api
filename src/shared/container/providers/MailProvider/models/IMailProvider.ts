@@ -1,5 +1,6 @@
-// Define as props que nosso envio de e-mail necessita
+import ISendMailDTO from '../dtos/ISendMailDTO';
 
+// Define as props que nosso envio de e-mail necessita
 export default interface IMailProvider {
-  sendMail(to: string, body: string): Promise<void>;
+  sendMail(data: ISendMailDTO): Promise<void>;
 }
