@@ -24,8 +24,8 @@ class ListProviderDayAvailabilityService {
 
   public async execute({
     provider_id,
-    year,
     month,
+    year,
     day,
   }: IRequest): Promise<IResponse> {
     const appointments =
