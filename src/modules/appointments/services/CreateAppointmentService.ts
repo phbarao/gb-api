@@ -35,12 +35,6 @@ class CreateAppointmentService {
         provider_id,
       );
 
-    const appointment = await this.appointmentsRepository.create({
-      provider_id,
-      user_id,
-      date: appointmentDate,
-    });
-
     if (findAppointmentInSameDate) {
       throw new AppError('This appointment is alredy booked');
     }
@@ -58,6 +52,12 @@ class CreateAppointmentService {
         'You can only create appointments between 8am and 5pm',
       );
     }
+
+    const appointment = await this.appointmentsRepository.create({
+      provider_id,
+      user_id,
+      date: appointmentDate,
+    });
 
     const dateFormatted = format(appointmentDate, "dd/MM/yyyy 'às' HH:mm'h'");
 
