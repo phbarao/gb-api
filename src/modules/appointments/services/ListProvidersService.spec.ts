@@ -1,6 +1,6 @@
 import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
-import ListProvidersService from './ListProvidersService';
 import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
+import ListProvidersService from './ListProvidersService';
 
 let fakeUsersRepository: FakeUsersRepository;
 let fakeCacheProvider: FakeCacheProvider;
@@ -40,6 +40,6 @@ describe('ListProviders', () => {
       user_id: loggedUser.id,
     });
 
-    expect(providers).toEqual([user1, user2]);
+    await expect(providers).toEqual([user1, user2]);
   });
 });

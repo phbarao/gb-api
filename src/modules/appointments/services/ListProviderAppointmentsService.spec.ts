@@ -1,6 +1,6 @@
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
-import ListProviderAppointmentsService from './ListProviderAppointmentsService';
 import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
+import ListProviderAppointmentsService from './ListProviderAppointmentsService';
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let fakeCacheProvider: FakeCacheProvider;
@@ -32,11 +32,11 @@ describe('ListProviderAppointments', () => {
 
     const appointments = await listProviderAppointments.execute({
       provider_id: 'provider',
-      year: 2020,
-      month: 5,
       day: 20,
+      month: 5,
+      year: 2020,
     });
 
-    expect(appointments).toEqual([appointment1, appointment2]);
+    await expect(appointments).toEqual([appointment1, appointment2]);
   });
 });

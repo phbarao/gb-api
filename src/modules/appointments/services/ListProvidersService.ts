@@ -34,4 +34,5 @@ class ListProvidersService {
     return users;
   }
 }
+
 export default ListProvidersService;

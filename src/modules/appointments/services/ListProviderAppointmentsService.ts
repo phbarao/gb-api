@@ -23,9 +23,9 @@ class ListProviderAppointmentsService {
 
   public async execute({
     provider_id,
-    year,
-    month,
     day,
+    month,
+    year,
   }: IRequest): Promise<Appointment[]> {
     const cacheKey = `provider-appointments:${provider_id}:${year}-${month}-${day}`;
 
@@ -37,9 +37,9 @@ class ListProviderAppointmentsService {
       appointments = await this.appointmentsRepository.findAllInDayFromProvider(
         {
           provider_id,
-          year,
-          month,
           day,
+          month,
+          year,
         },
       );
 
@@ -49,4 +49,5 @@ class ListProviderAppointmentsService {
     return appointments;
   }
 }
+
 export default ListProviderAppointmentsService;
